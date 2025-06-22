@@ -1,0 +1,292 @@
+/* My Story Modal Styles */
+.story-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.story-content {
+    position: relative;
+    background-color: #FDF6E9;
+    margin: 5% auto;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 90, 43, 0.15);
+    box-shadow: 0 4px 25px rgba(139, 90, 43, 0.3);
+    animation: slideIn 0.4s;
+    
+    /* Firefox scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #a06c38 rgba(253, 246, 233, 0.5);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) scrollbar styling */
+.story-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.story-content::-webkit-scrollbar-track {
+    background: rgba(253, 246, 233, 0.5);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.story-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #8B5A2B, #a06c38);
+    border-radius: 10px;
+    border: 2px solid rgba(253, 246, 233, 0.5);
+}
+
+.story-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #a06c38, #b67d45);
+}
+
+/* Add decorative elements near the scrollbar */
+.story-content::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: 8px;
+    width: 12px;
+    height: 50px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.15"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.story-content::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    right: 8px;
+    width: 12px;
+    height: 50px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.15"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    transform: rotate(180deg);
+    pointer-events: none;
+}
+
+.story-letter {
+    padding: 20px 10px;
+    position: relative;
+}
+
+.story-letter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #8B5A2B;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.letter-content {
+    font-family: 'Montaga', serif;
+    font-size: 17px;
+    color: #8B5A2B;
+    line-height: 1.8;
+    padding-right: 20px;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+}
+
+.letter-content .signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    margin-top: 40px;
+    text-align: right;
+    padding-right: 40px;
+}
+
+.close-story {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8B5A2B;
+    color: #FDF6E9;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(139, 90, 43, 0.3);
+    border: 2px solid #FDF6E9;
+    z-index: 101;
+    transform: rotate(0deg);
+}
+
+.close-story:hover {
+    background-color: #a06c38;
+    transform: rotate(90deg);
+}
+
+.close-story::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #FDF6E9;
+    transform: rotate(45deg);
+}
+
+.close-story::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #FDF6E9;
+    transform: rotate(-45deg);
+}
+
+/* Decorative elements for the modal */
+.story-letter::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.05"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>');
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.story-letter::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-30px); opacity: 0}
+    to {transform: translateY(0); opacity: 1}
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .story-content {
+    margin: 10% auto;
+    width: 85%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-content {
+    width: 90%;
+    padding: 25px 20px;
+    max-height: 85vh;
+  }
+  
+  .close-story {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .story-letter {
+    padding: 15px 5px;
+  }
+
+  .story-letter h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .letter-content {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-content {
+    width: 95%;
+    padding: 20px 15px;
+    margin: 15% auto 5% auto;
+  }
+  
+  .close-story {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .story-letter {
+    padding: 5px 0;
+  }
+  
+  .story-letter h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  
+  .letter-content {
+    font-size: 14px;
+  }
+  
+  .letter-content p {
+    margin-bottom: 15px;
+  }
+  
+  .letter-content .signature {
+    font-size: 22px;
+    padding-right: 0;
+  }
+  
+  .close-story::before,
+  .close-story::after {
+    width: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .story-content {
+    margin-top: 20%;
+  }
+  
+  .story-letter h2 {
+    font-size: 28px;
+  }
+  
+  .letter-content {
+    font-size: 13px;
+  }
+}

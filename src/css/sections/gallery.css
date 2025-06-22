@@ -1,0 +1,256 @@
+.gallery-section {
+    padding: 80px 0;
+    background-color: #FDF6E9;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.gallery-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 58px;
+    color: #8B5A2B;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.gallery-subtitle {
+    font-family: 'Montaga', serif;
+    font-size: 18px;
+    color: #8B5A2B;
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Arch image styling */
+.image-arch {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.image-arch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #8B5A2B;
+    border-radius: 150px 150px 0 0;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.image-arch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 150px 150px 0 0;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(139, 90, 43, 0.3);
+    transition: transform 1.5s ease;
+}
+
+.gallery-item h3 {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #8B5A2B;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.event-time {
+    font-family: 'Montaga', serif;
+    font-size: 18px;
+    color: #8B5A2B;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.event-description {
+    font-family: 'Montaga', serif;
+    font-size: 14px;
+    color: #8B5A2B;
+    line-height: 1.6;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .gallery-grid {
+        justify-content: center;
+    }
+    
+    .gallery-item {
+        flex: 0 0 calc(50% - 30px);
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+  .gallery-grid {
+    gap: 25px;
+  }
+  
+  .image-arch {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 60px 0;
+    }
+    
+    .gallery-title {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+    
+    .gallery-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .gallery-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    .image-arch {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gallery-item {
+        flex: 0 0 100%;
+        max-width: 320px;
+    }
+    
+    .gallery-title {
+        font-size: 42px;
+    }
+    
+    .image-arch {
+        height: 400px;
+    }
+}
+
+/* Fix gallery images on very small screens */
+@media (max-width: 360px) {
+    .gallery-title {
+        font-size: 36px;
+    }
+    
+    .gallery-item {
+        max-width: 240px; /* Make items slightly smaller */
+    }
+    
+    .image-arch {
+        height: 280px; /* Set a more appropriate height */
+        min-height: 240px; /* Ensure minimum height */
+    }
+    
+    /* Ensure images maintain proper aspect ratio */
+    .image-arch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Larger screens */
+@media (min-width: 1400px) {
+  .gallery-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    max-width: 300px;
+  }
+  
+  .image-arch {
+    height: 420px;
+  }
+}
+
+/* Removing modal styles that aren't needed for this design */
+.modal, .close, .modal-content, #caption {
+    display: none;
+}
+
+/* Animation cho hình ảnh */
+.image-arch img {
+    transition: transform 1.5s ease;
+}
+
+.gallery-item:hover .image-arch img {
+    transform: scale(1.05);
+}
+
+/* Animation khi lướt đến */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hiệu ứng pulse nhẹ cho hình ảnh khi scroll đến */
+@keyframes gentle-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.gallery-item.visible .image-arch img {
+    animation: gentle-pulse 3s infinite ease-in-out;
+}
+
+.gallery-item:hover .image-arch img {
+    animation: none;
+}

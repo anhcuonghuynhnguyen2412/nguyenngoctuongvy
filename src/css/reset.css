@@ -1,0 +1,55 @@
+/* Reset CSS */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto; /* Changed from 100% */
+  font-family: "Montaga", serif;
+  color: #8B5A2B;
+  background-color: #FDF6E9;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  overflow-y: auto; /* Changed from scroll */
+  overflow-x: hidden;
+}
+
+/* Ensure responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix viewport issues */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+/* Better form elements on iOS */
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}

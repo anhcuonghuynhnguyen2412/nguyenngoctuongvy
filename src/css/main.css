@@ -1,0 +1,180 @@
+body {
+    font-family: 'Montaga', serif;
+    margin: 0;
+    padding: 0;
+    color: #8B5A2B;
+    background-color: #FDF6E9;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #8B5A2B;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Consistent Buttons */
+.button, 
+.cta-button, 
+.details-rsvp-button, 
+.rsvp-submit {
+    display: inline-block;
+    font-size: 16px;
+    color: #FDF6E9;
+    background: #8B5A2B;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.2);
+    font-family: 'Montaga', serif;
+}
+
+.button:hover, 
+.cta-button:hover, 
+.details-rsvp-button:hover,
+.rsvp-submit:hover {
+    background: #a06c38;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.25);
+}
+
+/* Consistent sections spacing */
+section {
+    padding: 80px 0;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(139, 90, 43, 0.2);
+    color: #8B5A2B;
+}
+
+/* Đảm bảo mọi chuyển động đều mượt mà */
+* {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Thêm vào cuối file */
+
+/* Responsive Typography - Base Font Size */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Responsive Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Better Touch Target Sizes for Mobile */
+@media (max-width: 768px) {
+  .button, 
+  .cta-button, 
+  .details-rsvp-button, 
+  .rsvp-submit,
+  input[type="submit"],
+  select {
+    min-height: 44px; /* Better touch target */
+    font-size: 1rem;
+  }
+
+  /* Improve spacing on mobile */
+  section {
+    padding: 60px 0;
+  }
+}
+
+/* Additional responsive fixes */
+@media (max-width: 991px) {
+    /* Improve spacing for medium devices */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Fix any potential overflow issues */
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Improve padding for form elements */
+    input, select, textarea, button {
+        padding: 12px 15px;
+    }
+    
+    /* Ensure content doesn't overflow */
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Better spacing for small screens */
+    section {
+        padding: 40px 0;
+    }
+    
+    h2 {
+        font-size: 2.2em;
+    }
+}
