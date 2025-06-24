@@ -2,19 +2,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montaga', serif;
-    color: #8B5A2B;
+    color: #6B9080; /* Thay đổi từ #8B5A2B sang xanh lá đậm */
 }
 
 .hero-section {
-    background-color: #FDF6E9;
-    background-image: linear-gradient(to bottom, #FDF6E9, #f5e9d8);
+    background-color: #E8F4EA; /* Màu nền xanh lá nhạt */
+    position: relative;
     min-height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative;
-    padding-bottom: 50px;
-    overflow: hidden;
-    border: none;
 }
 
 /* Navigation Styles - Refined */
@@ -25,20 +22,25 @@ body {
     padding: 20px 50px;
     position: relative;
     z-index: 10;
+    /* background-color: rgba(245, 249, 246, 0.95); */
 }
 
 .nav-left .graduate-name-small {
     font-size: 32px;
     font-weight: 400;
     font-family: 'Great Vibes', cursive;
-    color: #8B5A2B;
+    color: #8FBC8F; /* Thay đổi từ #8B5A2B sang xanh lá pastel */
     text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(139, 90, 43, 0.1);
+    text-shadow: 1px 1px 2px rgba(143, 188, 143, 0.1);
     transition: all 0.3s ease;
 }
 
 .nav-left .graduate-name-small:hover {
-    color: #a06c38;
+    color: #A8D8B9; /* Thay đổi từ #a06c38 sang mint green */
+}
+
+.nav-left a {
+    color: #6B9080; /* Thay đổi từ #8B5A2B sang xanh lá đậm */
 }
 
 .nav-right {
@@ -48,7 +50,7 @@ body {
 }
 
 .nav-right a {
-    color: #8B5A2B;
+    color: #6B9080; /* Thay đổi từ #8B5A2B sang xanh lá đậm */
     text-decoration: none;
     font-family: 'Montaga', serif;
     font-size: 16px;
@@ -66,7 +68,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #8B5A2B;
+    background-color: #8FBC8F; /* Thay đổi từ #8B5A2B sang xanh lá pastel */
     transition: all 0.3s ease;
 }
 
@@ -76,14 +78,14 @@ body {
 
 /* Cập nhật style cho nút My Story */
 .nav-right .cta-button-small {
-    background-color: #8B5A2B;
-    color: #FDF6E9;
+    background-color: #8FBC8F;
+    color: #F5F9F6;
     padding: 12px 24px;
     border-radius: 10px;
     font-weight: 500;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(139, 90, 43, 0.2);
+    box-shadow: 0 2px 10px rgba(143, 188, 143, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -101,9 +103,9 @@ body {
 }
 
 .nav-right .cta-button-small:hover {
-    background-color: #a06c38;
+    background-color: #A8D8B9;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+    box-shadow: 0 4px 12px rgba(143, 188, 143, 0.3);
 }
 
 .nav-right .cta-button-small:hover::after {
@@ -118,7 +120,7 @@ body {
     justify-content: center;
     flex-grow: 1;
     position: relative;
-    padding: 20px 0;
+    padding-bottom: 70px;
 }
 
 .hero-image-container {
@@ -135,7 +137,7 @@ body {
     position: absolute;
     width: 520px;
     height: 520px;
-    border: 1px solid rgba(139, 90, 43, 0.2);
+    border: 1px solid rgba(143, 188, 143, 0.2);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -160,7 +162,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 5px 30px rgba(139, 90, 43, 0.15);
+    box-shadow: 0 5px 30px rgba(143, 188, 143, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,11 +191,11 @@ body {
     z-index: 10;
     padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #8B5A2B, #a06c38);
+    background: linear-gradient(to bottom, #8fbda9, #7cab96);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0px 2px 5px rgba(139, 90, 43, 0.05);
+    text-shadow: 0px 2px 5px rgba(143, 188, 143, 0.05);
     opacity: 0;
     animation: fadeIn 1.5s forwards 0.5s;
 }
@@ -220,8 +222,8 @@ body {
 }
 
 .cta-button {
-    background-color: #8B5A2B;
-    color: #FDF6E9;
+    background-color: #8FBC8F;
+    color: #F5F9F6;
     font-family: 'Montaga', serif;
     font-size: 16px;
     padding: 15px 40px;
@@ -230,7 +232,7 @@ body {
     border-radius: 10px;
     letter-spacing: 0.5px;
     font-weight: 500;
-    box-shadow: 0 2px 15px rgba(139, 90, 43, 0.2);
+    box-shadow: 0 2px 15px rgba(143, 188, 143, 0.2);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -249,7 +251,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #a06c38;
+    background-color: #A8D8B9;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(139, 90, 43, 0.3);
 }
@@ -454,9 +456,9 @@ body {
 
 /* Hiệu ứng pulse nhẹ cho circle border */
 @keyframes pulseCircle {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-    50% { transform: translate(-50%, -50%) scale(1.02); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; box-shadow: 0 0 0 0 rgba(143, 188, 143, 0.4); }
+    50% { transform: translate(-50%, -50%) scale(1.02); opacity: 1; box-shadow: 0 0 0 20px rgba(143, 188, 143, 0); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; box-shadow: 0 0 0 0 rgba(143, 188, 143, 0); }
 }
 
 .hero-image-container::before {
@@ -548,11 +550,11 @@ body {
     z-index: 10;
     padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #8B5A2B, #a06c38);
+    background: linear-gradient(to bottom, #8fbda9, #7cab96);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0px 2px 5px rgba(139, 90, 43, 0.05);
+    text-shadow: 0px 2px 5px rgba(107, 144, 128, 0.05);
     opacity: 0;
     animation: fadeIn 1.5s forwards 0.5s;
 }
@@ -565,7 +567,14 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
+
+    .hero-image-container::after {
+        top: 38%;
+    }
+    .hero-image-container::before {
+        top: 38%;
+    }
+
     /* Hero container shouldn't have position: relative as it affects layout */
     .hero-image-container {
         position: static;
@@ -586,7 +595,7 @@ body {
         white-space: normal;
         
         /* Fix color issues when positioned below image */
-        background: linear-gradient(to right, #8B5A2B, #a06c38);
+        background: linear-gradient(to bottom, #8fbda9, #7cab96);
         -webkit-background-clip: text;
         color: transparent;
     }
@@ -640,4 +649,22 @@ body {
         font-size: 38px;
         margin-top: 25px;
     }
+}
+
+@media (max-width: 392px) {
+    .hero-image-container::after {
+        top: 33%;
+    }
+    .hero-image-container::before {
+        top: 33%;
+    }
+}
+
+/* Thay đổi cho overlay text box */
+.overlay-text-box h1 {
+    text-shadow: 1px 1px 2px rgba(143, 188, 143, 0.2); /* Thay đổi rgba values */
+}
+
+.overlay-text-box p {
+    text-shadow: 1px 1px 2px rgba(143, 188, 143, 0.2); /* Thay đổi rgba values */
 }

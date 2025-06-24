@@ -1,6 +1,6 @@
 .gallery-section {
-    padding: 80px 0;
-    background-color: #FDF6E9;
+    padding-top: 80px;
+    background-color: #E8F4EA; /* Màu nền xanh lá nhạt hơn để tạo sự khác biệt */
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -15,7 +15,7 @@
 .gallery-title {
     font-family: 'Great Vibes', cursive;
     font-size: 58px;
-    color: #8B5A2B;
+    color: #8FBC8F; /* Đổi màu chữ thành xanh lá cây */
     margin-bottom: 20px;
     text-align: center;
     font-weight: 400;
@@ -24,7 +24,7 @@
 .gallery-subtitle {
     font-family: 'Montaga', serif;
     font-size: 18px;
-    color: #8B5A2B;
+    color: #6B9080; /* Thay đổi từ #8B5A2B sang xanh lá đậm */
     margin-bottom: 60px;
     text-align: center;
     max-width: 700px;
@@ -80,14 +80,14 @@
     border-radius: 150px 150px 0 0;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(139, 90, 43, 0.3);
+    border: 1px solid rgba(143, 188, 143, 0.3); /* Thay đổi từ rgba(139, 90, 43, 0.3) */
     transition: transform 1.5s ease;
 }
 
 .gallery-item h3 {
     font-family: 'Montaga', serif;
     font-size: 22px;
-    color: #8B5A2B;
+    color: #8FBC8F; /* Đổi màu tiêu đề thành xanh lá cây */
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -95,7 +95,7 @@
 .event-time {
     font-family: 'Montaga', serif;
     font-size: 18px;
-    color: #8B5A2B;
+    color: #6B9080; /* Đổi màu thời gian sự kiện thành màu xám xanh */
     margin-bottom: 15px;
     font-weight: 400;
 }

@@ -4,7 +4,7 @@ body {
 }
 
 .rsvp-section {
-    background-color: #FDF6E9;
+    background-color: #F5F9F6; /* Màu nền xanh lá nhạt */
     padding: 80px 0;
     position: relative;
 }
@@ -28,7 +28,7 @@ body {
 .rsvp-title {
     font-family: 'Great Vibes', cursive;
     font-size: 58px;
-    color: #8B5A2B;
+    color: #8FBC8F;
     margin-bottom: 20px;
     font-weight: 400;
     text-shadow: 1px 1px 2px rgba(139, 90, 43, 0.1);
@@ -36,10 +36,10 @@ body {
 
 .rsvp-subtitle {
     font-family: 'Montaga', serif;
-    font-size: 16px;
-    color: #8B5A2B;
-    margin-bottom: 40px;
+    font-size: 18px;
+    color: #6B9080;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .rsvp-contact-info {
@@ -54,7 +54,7 @@ body {
 
 .contact-icon {
     font-size: 18px;
-    color: #8B5A2B;
+    color: #8FBC8F;
     margin-right: 15px;
     width: 20px;
     height: 20px;
@@ -66,7 +66,7 @@ body {
 .contact-text {
     font-family: 'Montaga', serif;
     font-size: 16px;
-    color: #8B5A2B;
+    color: #6B9080;
 }
 
 /* Form Styles */
@@ -81,79 +81,104 @@ body {
 .form-group label {
     font-family: 'Montaga', serif;
     font-size: 14px;
-    color: #8B5A2B;
+    color: #6B9080;
     display: block;
     margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
-    width: 90%;
+    width: 100%;
     padding: 12px 15px;
-    border: 1px solid rgba(139, 90, 43, 0.2);
+    border: 1px solid rgba(143, 188, 143, 0.3);
     border-radius: 10px;
-    background-color: #FDF6E9;
+    background-color: rgba(245, 249, 246, 0.5);
+    color: #6B9080;
     font-family: 'Montaga', serif;
-    font-size: 14px;
-    color: #8B5A2B;
-    transition: border 0.3s ease;
-}
-
-.rsvp-form input::placeholder,
-.rsvp-form textarea::placeholder {
-    color: rgba(139, 90, 43, 0.5);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .rsvp-form input:focus,
 .rsvp-form select:focus,
 .rsvp-form textarea:focus {
     outline: none;
-    border-color: #8B5A2B;
+    border-color: #8FBC8F;
+    box-shadow: 0 0 0 3px rgba(143, 188, 143, 0.15);
 }
 
+/* Placeholder text */
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+    color: rgba(107, 144, 128, 0.6);
+    font-family: 'Montaga', serif;
+}
+
+/* Dropdown styling */
 .rsvp-form select {
     appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%238B5A2B' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="%238FBC8F"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 15px center;
+    padding-right: 40px;
 }
 
+.rsvp-form select option {
+    background-color: #F5F9F6;
+    color: #6B9080;
+    font-family: 'Montaga', serif;
+}
+
+/* Submit button */
 .rsvp-submit {
-    background-color: #8B5A2B;
-    color: #FDF6E9;
+    background-color: #8FBC8F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    cursor: pointer;
     font-family: 'Montaga', serif;
     font-size: 16px;
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(143, 188, 143, 0.25);
+    display: inline-block;
     margin-top: 10px;
-    width: auto;
 }
 
 .rsvp-submit:hover {
-    background-color: #a06c38;
+    background-color: #A8D8B9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(143, 188, 143, 0.3);
 }
 
+.rsvp-submit:active {
+    transform: translateY(0);
+}
+
+/* Response message */
 .response-message {
+    padding: 12px 20px;
     margin-top: 20px;
-    padding: 15px;
     border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Montaga', serif;
     display: none;
 }
 
 .response-message.success {
-    background-color: rgba(76, 175, 80, 0.2);
-    color: #2e7d32;
-    border: 1px solid #2e7d32;
+    background-color: rgba(168, 216, 185, 0.2);
+    color: #6B9080;
+    border: 1px solid #8FBC8F;
     display: block;
 }
 
 .response-message.error {
-    background-color: rgba(244, 67, 54, 0.2);
+    background-color: rgba(255, 99, 71, 0.1);
     color: #c62828;
     border: 1px solid #c62828;
     display: block;

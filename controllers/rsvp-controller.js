@@ -19,8 +19,8 @@ exports.processRSVP = (req, res) => {
   
   // Create email content for the guest who submitted the form
   const guestEmailContent = `
-    <div style="font-family: 'Montaga', serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #8B5A2B; border-radius: 10px;">
-      <h2 style="color: #8B5A2B; text-align: center;">Xác nhận tham dự lễ tốt nghiệp</h2>
+    <div style="font-family: 'Montaga', serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #6B9080; border-radius: 10px;">
+      <h2 style="color: #6B9080; text-align: center;">Xác nhận tham dự lễ tốt nghiệp</h2>
       <p>Xin chào <strong>${formData.name}</strong>,</p>
       <p>Cảm ơn bạn đã phản hồi lời mời tham dự lễ tốt nghiệp của mình.</p>
       <p><strong>Trạng thái tham dự:</strong> ${formData.attending === 'yes' ? 'Xác nhận tham dự' : 'Không thể tham dự'}</p>
@@ -29,8 +29,8 @@ exports.processRSVP = (req, res) => {
       <div style="margin-top: 30px; text-align: center;">
         <p>Thông tin chi tiết về sự kiện:</p>
         <p><strong>Thời gian:</strong> Thứ Năm, ngày 03 tháng 07, 2025</p>
-        <p><strong>Địa điểm:</strong> Hội trường Đại học Hoa Sen</p>
-        <p><strong>Địa chỉ:</strong> 8 Nguyễn Văn Tráng, Phường Bến Thành, Quận 1, Hồ Chí Minh</p>
+        <p><strong>Địa điểm:</strong> Nhà hát Bến Thành</p>
+        <p><strong>Địa chỉ:</strong> Số 06 Mạc Đĩnh Chi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
       </div>
       <p style="text-align: center; margin-top: 30px;">Rất mong được gặp bạn tại sự kiện!</p>
       <p style="text-align: center; font-style: italic;">Mỹ Nhi</p>

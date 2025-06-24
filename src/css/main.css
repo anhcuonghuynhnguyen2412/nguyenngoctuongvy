@@ -1,17 +1,29 @@
 body {
     font-family: 'Montaga', serif;
-    margin: 0;
-    padding: 0;
-    color: #8B5A2B;
-    background-color: #FDF6E9;
     line-height: 1.6;
+    color: #333;
+    background-color: #F5F9F6; /* Màu nền xanh lá nhạt */
 }
 
-h1, h2, h3 {
-    color: #8B5A2B;
-    font-family: 'Great Vibes', cursive;
-    font-weight: 400;
-    margin: 0;
+h1, h2, h3, h4, h5, h6 {
+    color: #8FBC8F; /* Màu xanh lá pastel cho tiêu đề */
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+a {
+    color: #6B9080; /* Màu xanh lá đậm cho liên kết */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #A8D8B9; /* Màu mint green cho hover */
+}
+
+/* Màu chữ tiêu đề trong phần section */
+.gallery-title, .rsvp-title, .details-title {
+    color: #8FBC8F;
 }
 
 h1 {
@@ -48,7 +60,7 @@ p {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.2);
+    box-shadow: 0 4px 15px rgba(143, 188, 143, 0.2);
     font-family: 'Montaga', serif;
 }
 
@@ -61,9 +73,15 @@ p {
     box-shadow: 0 6px 20px rgba(139, 90, 43, 0.25);
 }
 
+.rsvp-submit:hover {
+    background: #A8D8B9; /* Thay đổi từ #a06c38 sang mint green */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(143, 188, 143, 0.25); /* Thay đổi rgba values */
+}
+
 /* Consistent sections spacing */
 section {
-    padding: 80px 0;
+    padding-top: 80px;
 }
 
 /* Smooth scrolling */
@@ -73,8 +91,8 @@ html {
 
 /* Selection color */
 ::selection {
-    background-color: rgba(139, 90, 43, 0.2);
-    color: #8B5A2B;
+    background-color: rgba(143, 188, 143, 0.2); /* Thay đổi từ rgba(143, 188, 143, 0.2) */
+    color: #8FBC8F; /* Thay đổi từ #8B5A2B sang xanh lá pastel */
 }
 
 /* Đảm bảo mọi chuyển động đều mượt mà */

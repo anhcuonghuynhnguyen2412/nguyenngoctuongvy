@@ -1,12 +1,12 @@
 body {
     font-family: 'Montaga', serif;
-    background-color: #f9f9f9;
+    background-color: #F5F9F6; /* Màu nền xanh lá nhạt */
     color: #333;
 }
 
 .details-section {
     padding: 80px 0;
-    background-color: #FDF6E9;
+    background-color: #F5F9F6;
     position: relative;
     overflow: hidden;
 }
@@ -33,7 +33,7 @@ body {
     padding-top: 115%; /* Giữ tỷ lệ khung hình */
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(139, 90, 43, 0.15);
+    box-shadow: 0 10px 30px rgba(143, 188, 143, 0.15); /* Đổi màu shadow */
 }
 
 .details-image-frame::before {
@@ -43,7 +43,7 @@ body {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    border: 1px solid rgba(139, 90, 43, 0.2);
+    border: 1px solid rgba(143, 188, 143, 0.2); /* Thay đổi từ rgba(139, 90, 43, 0.2) */
     border-radius: 50%;
     z-index: 1;
 }
@@ -55,7 +55,7 @@ body {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    border: 1px solid rgba(139, 90, 43, 0.1);
+    border: 1px solid rgba(143, 188, 143, 0.1); /* Thay đổi từ rgba(139, 90, 43, 0.1) */
     border-radius: 50%;
     z-index: 0;
 }
@@ -86,7 +86,18 @@ body {
 .floral-decoration img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 5px 15px rgba(139, 90, 43, 0.2));
+    /* filter: drop-shadow(0 5px 15px rgba(143, 188, 143, 0.2)); */
+    /* Có thể cần điều chỉnh hue-rotate để biến hoa thành màu xanh lá */
+    /* filter: drop-shadow(0 5px 15px rgba(143, 188, 143, 0.2)) hue-rotate(80deg); */
+}
+
+/* Thay đổi màu cho các tiêu đề */
+.details-title {
+    color: #8FBC8F;
+}
+
+.details-info-section h3 {
+    color: #8FBC8F;
 }
 
 /* Làm đẹp nội dung phần details */
@@ -99,23 +110,23 @@ body {
 .details-title {
     font-family: 'Great Vibes', cursive;
     font-size: 58px;
-    color: #8B5A2B;
+    color: #8FBC8F;
     margin-bottom: 20px;
     font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(139, 90, 43, 0.1);
+    text-shadow: 1px 1px 2px rgba(143, 188, 143, 0.1); /* Thay đổi rgba values */
 }
 
 .details-intro {
     font-family: 'Montaga', serif;
     font-size: 18px;
-    color: #8B5A2B;
+    color: #6B9080; /* Thay đổi từ #6B9080 sang xanh lá đậm */
     margin-bottom: 25px;
     line-height: 1.5;
 }
 
 .details-divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(139, 90, 43, 0.4), transparent);
+    background: linear-gradient(to right, transparent, rgba(65, 88, 65, 0.2), transparent);
     margin: 30px 0;
     width: 100%;
 }
@@ -127,7 +138,7 @@ body {
 .details-info-section h3 {
     font-family: 'Great Vibes', cursive;
     font-size: 36px;
-    color: #8B5A2B;
+    color: #8FBC8F;
     margin-bottom: 12px;
     font-weight: 400;
 }
@@ -135,7 +146,7 @@ body {
 .details-info-section p {
     font-family: 'Montaga', serif;
     font-size: 16px;
-    color: #8B5A2B;
+    color: #6B9080;
     margin-bottom: 5px;
     line-height: 1.6;
 }
@@ -143,7 +154,7 @@ body {
 .details-note {
     font-family: 'Montaga', serif;
     font-size: 16px;
-    color: #8B5A2B;
+    color: #6B9080;
     margin: 30px 0;
     line-height: 1.6;
     font-style: italic;
@@ -151,8 +162,8 @@ body {
 
 .details-rsvp-button {
     display: inline-block;
-    background-color: #8B5A2B;
-    color: #FDF6E9;
+    background-color: #8FBC8F;
+    color: #F5F9F6;
     font-family: 'Montaga', serif;
     font-size: 16px;
     padding: 15px 45px;
@@ -162,7 +173,7 @@ body {
     letter-spacing: 1.5px;
     font-weight: 500;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.25);
+    box-shadow: 0 4px 15px rgba(143, 188, 143, 0.25);
     position: relative;
     overflow: hidden;
 }
@@ -180,13 +191,8 @@ body {
 }
 
 .details-rsvp-button:hover {
-    background-color: #a06c38;
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(139, 90, 43, 0.3);
-}
-
-.details-rsvp-button:hover::after {
-    left: 100%;
+    background-color: #A8D8B9;
+    transform: translateY(-2px);
 }
 
 /* Thêm phần trang trí cho cả section */
@@ -197,7 +203,7 @@ body {
     left: 50px;
     width: 100px;
     height: 100px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.05"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238FBC8F" opacity="0.05"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>');
     background-repeat: no-repeat;
     opacity: 0.4;
     transform: rotate(-15deg);
@@ -211,7 +217,7 @@ body {
     right: 50px;
     width: 80px;
     height: 80px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238B5A2B" opacity="0.05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238FBC8F" opacity="0.05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
     background-repeat: no-repeat;
     opacity: 0.3;
     z-index: 0;
