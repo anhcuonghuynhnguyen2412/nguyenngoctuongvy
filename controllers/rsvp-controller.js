@@ -22,9 +22,9 @@ exports.processRSVP = (req, res) => {
     <div style="font-family: 'Montaga', serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #6B9080; border-radius: 10px;">
       <h2 style="color: #6B9080; text-align: center;">Xác nhận tham dự lễ tốt nghiệp</h2>
       <p>Xin chào <strong>${formData.name}</strong>,</p>
-      <p>Cảm ơn bạn đã phản hồi lời mời tham dự lễ tốt nghiệp của mình.</p>
+      <p>Cảm ơn bạn đã phản hồi lời mời tham dự lễ tốt nghiệp của Mỹ Nhi.</p>
       <p><strong>Trạng thái tham dự:</strong> ${formData.attending === 'yes' ? 'Xác nhận tham dự' : 'Không thể tham dự'}</p>
-      ${formData.attending === 'yes' ? `<p><strong>Món không ăn được:</strong> ${formData.dinner || 'Chưa chọn'}</p>` : ''}
+      <!-- ${formData.attending === 'yes' ? `<p><strong>Món không ăn được:</strong> ${formData.dinner || 'Chưa chọn'}</p>` : ''}-->
       ${formData.message ? `<p><strong>Lời nhắn của bạn:</strong> ${formData.message}</p>` : ''}
       <div style="margin-top: 30px; text-align: center;">
         <p>Thông tin chi tiết về sự kiện:</p>
