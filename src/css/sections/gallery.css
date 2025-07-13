@@ -37,27 +37,28 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
     margin-bottom: 40px;
 }
 
 .gallery-item {
-    flex: 1;
-    min-width: 220px;
-    max-width: 280px;
+    flex: 0 0 calc(33.33% - 25px); /* Hiển thị 3 hình một hàng (cho desktop) */
+    max-width: calc(33.33% - 25px);
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Arch image styling */
 .image-arch {
     width: 100%;
-    height: 400px;
+    height: 300px; /* Giảm chiều cao xuống để tỷ lệ phù hợp hơn với hình ngang */
     position: relative;
     margin-bottom: 20px;
     overflow: hidden;
+    border-radius: 20px; /* Giảm bo góc để hiển thị nhiều hình hơn */
 }
 
 .image-arch::before {
@@ -67,8 +68,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #8B5A2B;
-    border-radius: 150px 150px 0 0;
+    background: #8FBC8F;
+    border-radius: 150px;
     opacity: 0.1;
     z-index: 1;
 }
@@ -77,11 +78,30 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 150px 150px 0 0;
+    object-position: center; /* Đảm bảo hình được căn giữa */
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(143, 188, 143, 0.3); /* Thay đổi từ rgba(139, 90, 43, 0.3) */
+    border: 1px solid rgba(143, 188, 143, 0.3);
     transition: transform 1.5s ease;
+}
+
+/* Thay đổi kích thước và bố cục grid để phù hợp hơn với hình ngang */
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    flex: 0 0 calc(33.33% - 25px); /* Hiển thị 3 hình một hàng (cho desktop) */
+    max-width: calc(33.33% - 25px);
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .gallery-item h3 {
@@ -122,13 +142,14 @@
 }
 
 @media (max-width: 992px) {
-  .gallery-grid {
-    gap: 25px;
-  }
-  
-  .image-arch {
-    height: 350px;
-  }
+  .gallery-item {
+        flex: 0 0 calc(50% - 20px); /* 2 hình một hàng cho tablet */
+        max-width: calc(50% - 20px);
+    }
+    
+    .image-arch {
+        height: 250px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -153,25 +174,41 @@
     .image-arch {
         height: 400px;
     }
+    
+    .modal-content {
+        max-width: 95vw !important;
+        max-height: 70vh !important;
+    }
+    
+    .modal-caption {
+        font-size: 16px !important;
+        margin-top: 15px !important;
+        padding: 8px 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 98vw !important;
+        max-height: 65vh !important;
+    }
+    
+    .modal-caption {
+        font-size: 14px !important;
+        margin-top: 10px !important;
+        padding: 6px 12px !important;
+    }
 }
 
 @media (max-width: 576px) {
-    .gallery-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .gallery-item {
         flex: 0 0 100%;
-        max-width: 320px;
-    }
-    
-    .gallery-title {
-        font-size: 42px;
+        max-width: 350px; /* Giới hạn kích thước tối đa trên mobile */
     }
     
     .image-arch {
-        height: 400px;
+        height: 220px;
+        border-radius: 16px;
     }
 }
 
@@ -253,4 +290,221 @@
 
 .gallery-item:hover .image-arch img {
     animation: none;
+}
+
+/* Thêm đoạn mã này vào cuối file */
+
+/* Modal Lightbox Styles - Cập nhật để modal có thể di chuyển theo scroll */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.gallery-modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.gallery-modal.show .modal-content {
+    transform: scale(1);
+}
+
+/* Caption styling */
+.modal-caption {
+    color: white;
+    font-family: 'Montaga', serif;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 80%;
+    line-height: 1.5;
+    background-color: #8FBC8F;
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Cập nhật nút đóng */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    line-height: 1;
+    text-align: center;
+    z-index: 10001;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #8FBC8F;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+/* Điều chỉnh điều hướng ảnh */
+.modal-navigation {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 10000;
+}
+
+.modal-prev,
+.modal-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+    background-color: rgba(143, 188, 143, 0.7);
+}
+
+/* Thêm class vào các ảnh để làm rõ khả năng click */
+.image-arch {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.image-arch:hover {
+    transform: scale(1.05);
+}
+
+/* Style cho mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95vw !important;
+        max-height: 70vh !important;
+    }
+    
+    .modal-caption {
+        font-size: 16px !important;
+        margin-top: 15px !important;
+        padding: 8px 15px !important;
+    }
+    
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .modal-prev,
+    .modal-next {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .modal-navigation {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 98vw !important;
+        max-height: 65vh !important;
+    }
+    
+    .modal-caption {
+        font-size: 14px !important;
+        margin-top: 10px !important;
+        padding: 6px 12px !important;
+    }
+    
+    .modal-close {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .modal-prev,
+    .modal-next {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Override để đảm bảo modal có thể hiển thị */
+.gallery-modal[style*="display: flex"] {
+    display: flex !important;
+}
+
+/* Đảm bảo modal image hiển thị đúng cách */
+#modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Đảm bảo modal luôn ở trên cùng và theo scroll */
+.gallery-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 99999 !important;
 }

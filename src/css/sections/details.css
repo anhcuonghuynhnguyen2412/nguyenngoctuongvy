@@ -21,6 +21,7 @@ body {
 }
 
 /* Cải thiện style cho hình ảnh */
+/* Cải thiện style cho hình ảnh */
 .details-image-container {
     flex: 0 0 45%;
     position: relative;
@@ -33,31 +34,9 @@ body {
     padding-top: 115%; /* Giữ tỷ lệ khung hình */
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(143, 188, 143, 0.15); /* Đổi màu shadow */
-}
-
-.details-image-frame::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 1px solid rgba(143, 188, 143, 0.2); /* Thay đổi từ rgba(139, 90, 43, 0.2) */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.details-image-frame::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    border: 1px solid rgba(143, 188, 143, 0.1); /* Thay đổi từ rgba(139, 90, 43, 0.1) */
-    border-radius: 50%;
-    z-index: 0;
+    box-shadow: 0 10px 30px rgba(143, 188, 143, 0.15);
+    background-color: transparent;
+    background: none; /* Đảm bảo không có background */
 }
 
 .details-image {
@@ -68,6 +47,8 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 1.5s ease;
+    filter: none; /* Loại bỏ mọi filter */
+    background: none; /* Đảm bảo không có background */
 }
 
 /* Sửa lỗi họa tiết trang trí bị ẩn */
@@ -192,6 +173,7 @@ body {
 
 .details-rsvp-button:hover {
     background-color: #A8D8B9;
+    color: #F5F9F6;
     transform: translateY(-2px);
 }
 
@@ -239,7 +221,6 @@ body {
 }
 
 .details-image-frame {
-    opacity: 0.7;
     transform: scale(0.97);
     transition: opacity 1s ease, transform 1s ease;
 }
@@ -463,4 +444,32 @@ body {
         width: 30%;
         display: block; /* Ensure display */
     }
+}
+
+/* Loại bỏ mọi overlay hoặc pseudo-element có thể gây lớp sáng */
+.details-image-container::before,
+.details-image-container::after,
+.details-image-frame::before,
+.details-image-frame::after {
+    display: none !important;
+}
+
+/* Đảm bảo không có gradient hay overlay nào khác */
+.details-image-container {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.details-image-frame {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+/* Reset mọi filter có thể được apply từ nơi khác */
+.details-image {
+    filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
 }
